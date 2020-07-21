@@ -47,9 +47,14 @@
     </build>
 
 
+<!--    <scm>-->
+<!--        <developerConnection>scm:git:https://github.com/RazvanToma1573/Pet-Clinic.git</developerConnection>-->
+<!--      <tag>pet-clinic-0.0.1</tag>-->
+<!--  </scm>-->
+
     <scm>
-        <developerConnection>scm:git:https://github.com/RazvanToma1573/Pet-Clinic.git</developerConnection>
-      <tag>pet-clinic-0.0.1</tag>
-  </scm>
+        <url>https://github.com/RazvanToma1573/Pet-Clinic.git</url>
+        <connection>scm:git:https://github.com/RazvanToma1573/Pet-Clinic.git</connection>
+    </scm>
 
 </project>
