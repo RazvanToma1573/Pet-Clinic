@@ -42,6 +42,7 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:RazvanToma1573/Pet-Clinic.git</developerConnection>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
