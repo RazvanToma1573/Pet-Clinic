@@ -1,10 +1,12 @@
 package razvan.toma.petclinic.Service.Map;
 
+import org.springframework.stereotype.Service;
 import razvan.toma.petclinic.Model.Pet;
 import razvan.toma.petclinic.Service.PetService;
 
 import java.util.Set;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
