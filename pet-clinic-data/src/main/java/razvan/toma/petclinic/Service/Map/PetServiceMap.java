@@ -1,11 +1,11 @@
 package razvan.toma.petclinic.Service.Map;
 
 import razvan.toma.petclinic.Model.Pet;
-import razvan.toma.petclinic.Service.CrudService;
+import razvan.toma.petclinic.Service.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {
