@@ -1,5 +1,8 @@
 package razvan.toma.petclinic.Model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Person extends BaseEntity {
 
     private String firstName;

@@ -1,12 +1,22 @@
 package razvan.toma.petclinic.Model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import java.time.LocalDate;
 
+@Entity
 public class Pet extends BaseEntity{
 
     private String name;
+
+    @OneToOne(cascade = CascadeType.ALL)
     private PetType petType;
+
+    @ManyToOne
     private Owner owner;
+
     private LocalDate birthDate;
 
     public String getName() {
