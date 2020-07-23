@@ -3,10 +3,7 @@ package razvan.toma.petclinic.Bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import razvan.toma.petclinic.Model.*;
-import razvan.toma.petclinic.Service.OwnerService;
-import razvan.toma.petclinic.Service.PetTypeService;
-import razvan.toma.petclinic.Service.SpecialityService;
-import razvan.toma.petclinic.Service.VetService;
+import razvan.toma.petclinic.Service.*;
 
 import java.time.LocalDate;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -95,6 +94,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionasPet);
 
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Snezzy Kitty");
+        visitService.save(catVisit);
+
 
         System.out.println("Loaded Owners ... ");
 

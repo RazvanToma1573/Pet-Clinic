@@ -1,5 +1,6 @@
 package razvan.toma.petclinic.Service.Map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import razvan.toma.petclinic.Model.PetType;
 import razvan.toma.petclinic.Service.PetTypeService;
@@ -7,6 +8,7 @@ import razvan.toma.petclinic.Service.PetTypeService;
 import java.util.Set;
 
 @Service
+@Profile("Map")
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override
