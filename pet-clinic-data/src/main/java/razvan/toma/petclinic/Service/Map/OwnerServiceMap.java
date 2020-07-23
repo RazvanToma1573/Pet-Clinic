@@ -11,7 +11,7 @@ import razvan.toma.petclinic.Service.PetTypeService;
 import java.util.Set;
 
 @Service
-@Profile("Map")
+@Profile({"default", "Map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;

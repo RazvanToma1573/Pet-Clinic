@@ -8,7 +8,7 @@ import razvan.toma.petclinic.Service.PetService;
 import java.util.Set;
 
 @Service
-@Profile("Map")
+@Profile({"default", "Map"})
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override

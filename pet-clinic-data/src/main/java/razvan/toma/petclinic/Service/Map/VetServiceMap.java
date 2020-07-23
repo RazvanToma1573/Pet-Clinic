@@ -10,7 +10,7 @@ import razvan.toma.petclinic.Service.VetService;
 import java.util.Set;
 
 @Service
-@Profile("Map")
+@Profile({"default", "Map"})
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     private final SpecialityService specialityService;
