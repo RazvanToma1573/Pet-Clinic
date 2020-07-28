@@ -9,6 +9,7 @@ import razvan.toma.petclinic.Service.PetService;
 import razvan.toma.petclinic.Service.PetTypeService;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -75,5 +76,11 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
                 .filter(owner -> owner.getLastName().equals(lastName))
                 .findFirst()
                 .orElse(null);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        // todo: Implement
+        return null;
     }
 }
