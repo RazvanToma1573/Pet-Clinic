@@ -26,10 +26,10 @@ public class OwnerController {
 
     @InitBinder
     public void setAllowedFields(WebDataBinder webDataBinder) {
-        webDataBinder.setAllowedFields("id");
+        webDataBinder.setDisallowedFields("id");
     }
 
-    @GetMapping({"/find"})
+    @RequestMapping("/find")
     public String findOwners(Model model) {
         model.addAttribute("owner", Owner.builder().build());
 
@@ -44,7 +44,7 @@ public class OwnerController {
         }
 
         // find owners by last name
-        List<Owner> results = ownerService.findAllByLastNameLike(owner.getLastName());
+        List<Owner> results = ownerService.findAllByLastNameLike("%" + owner.getLastName() + "%");
         if (results.isEmpty()) {
             // no owners found
             bindingResult.rejectValue("lastName", "not found", "not found");
