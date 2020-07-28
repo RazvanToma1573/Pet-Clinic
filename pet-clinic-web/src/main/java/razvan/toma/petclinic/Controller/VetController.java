@@ -3,7 +3,11 @@ package razvan.toma.petclinic.Controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import razvan.toma.petclinic.Model.Vet;
 import razvan.toma.petclinic.Service.VetService;
+
+import java.util.Set;
 
 @Controller
 public class VetController {
@@ -22,5 +26,9 @@ public class VetController {
         return "vets/index";
     }
 
+    @RequestMapping("/api/vets")
+    public @ResponseBody Set<Vet> getVetsJson(){
+        return vetService.findAll();
+    }
 
 }
